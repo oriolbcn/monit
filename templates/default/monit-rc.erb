@@ -13,12 +13,16 @@ set alert <%= email %>
       <% end %>
     <% end %>
   <% end %>
-set mailserver <%= node[:monit][:mailserver][:host] %> port <%= node[:monit][:mailserver][:port] %>
-  username "<%= node[:monit][:mailserver][:username] %>"
-  password "<%= node[:monit][:mailserver][:password] %>"
-  using tlsv1
-  with timeout 30 seconds
-  using hostname "<%= node[:monit][:mailserver][:hostname] %>"
+  <% if node[:monit][:mailserver][:host] == 'localhost' %>
+    set mailserver localhost
+  <% else %>
+    set mailserver <%= node[:monit][:mailserver][:host] %> port <%= node[:monit][:mailserver][:port] %>
+      username "<%= node[:monit][:mailserver][:username] %>"
+      password "<%= node[:monit][:mailserver][:password] %>"
+      using tlsv1
+      with timeout 30 seconds
+      using hostname "<%= node[:monit][:mailserver][:hostname] %>"
+  <% end %>
 <% end %>
 
 set httpd port 2812 and
