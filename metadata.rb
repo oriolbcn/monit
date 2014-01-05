@@ -1,6 +1,6 @@
 name              "monit-tlq"
-maintainer        "Ben Dixon"
-maintainer_email  "ben@talkingquickly.co.uk"
+maintainer        "Oriol Collell"
+maintainer_email  "ocollell@dineyo.com"
 description       "Basic monit installation"
 version           "0.3.5"
 
