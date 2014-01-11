@@ -2,6 +2,6 @@ name              "monit-tlq"
 maintainer        "Oriol Collell"
 maintainer_email  "ocollell@dineyo.com"
 description       "Basic monit installation"
-version           "0.3.8"
+version           "0.3.9"
 
 supports      "ubuntu"

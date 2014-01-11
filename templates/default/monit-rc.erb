@@ -19,7 +19,7 @@ set alert <%= email %>
     set mailserver <%= node[:monit][:mailserver][:host] %> port <%= node[:monit][:mailserver][:port] %>
       username "<%= node[:monit][:mailserver][:username] %>"
       password "<%= node[:monit][:mailserver][:password] %>"
-      usign tlsv1
+      using tlsv1
       with timeout 30 seconds
   <% end %>
 <% end %>
